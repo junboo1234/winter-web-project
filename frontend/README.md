@@ -42,5 +42,5 @@ root.render() 을 통해서 리엑트 컴포넌트를 실제로 화면에 넣는
 
 
 #### 실제 동작
-start 누르면 "react-scripts start" 가 시작되며 내 컴퓨터에 임시 웹 서버를 띄우게 해줌
-
+start 누르면 "react-scripts start" 가 실행되고 이 명령어는 내 컴퓨터에 임시 웹 서버를 띄우게 됨   
+react-scripts는 index.js부터 시작하기 때문에 index.js에 들어있는 root.render() 속 컴포넌트를 실행하게 된다. 
