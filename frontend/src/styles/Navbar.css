@@ -1,0 +1,41 @@
+.navbar {
+    padding: 15px 20px;
+    position: fixed; /* 화면에 고정*/
+    top: 0; /* 맨 아래에 붙이기 */
+    left: 0;
+    width: 100%; /* 가로 꽉 차게 */
+    height: 60px;
+    background-color: #ffffff;
+    display: flex; /* 메뉴들을 가로로 나란히 배치 */
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eeeeee; /* 위에 살짝 선을 그어 구분 */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05); /* 은은한 그림자 */
+    z-index: 1000; /* 다른 내용물보다 항상 위에 보이게 */
+}
+.nav-button {
+    padding: 12px 24px;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.2s;
+}
+.navbar-logo a {
+    font-size: 20px;
+    font-weight: 800;
+    color: #6c5ce7; /* 포인트 컬러 */
+    text-decoration: none;
+    letter-spacing: -0.5px; /* 글자 간격을 좁혀서 더 세련되게 */
+}
+
+.navbar-menus {
+    padding: 0 20px;
+    display: flex;
+    gap: 30px; /* 메뉴 글자들 사이의 간격 */
+}
+
+.nav-button:hover {
+  background-color: skyblue;
+}

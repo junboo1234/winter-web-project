@@ -1,23 +1,19 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
-import './Navbar.css';
-
-function NavItem({label}){
-  return( 
-    <button className="nav-button" >
-      {label}
-    </button>
-  );
-}
+import Navbar from './components/Navbar';
+import './styles/Navbar.css';
+import Home from './pages/Home.js';
+import './styles/Home.css';
 
 function App() {
-  const menus = ["home","menu","mood","my page","about us"];
-  return (
-    <div className ="navbar">
-      {menus.map((menu,index)=>(
-        <NavItem key={index} label={menu}/>
-      ))}
-    </div>
 
+    return (
+        <BrowserRouter>
+            <div className = "app-container">
+                <Navbar />
+                <Home/>
+            </div>
+        </BrowserRouter>
   );
 }
 

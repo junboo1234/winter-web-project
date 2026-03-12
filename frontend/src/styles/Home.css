@@ -1,0 +1,6 @@
+.home-container {
+    padding-top: 80px;
+    padding-bottom: 20px; /* 메뉴바(60px)에 가려지지 않게 여유 공간 확보 */
+    min-height: 100vh;
+    background-color: #f8f9fa; /* 편안한 연회색 배경 */
+}
