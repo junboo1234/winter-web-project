@@ -1,39 +1,54 @@
 .navbar {
-    padding: 15px 20px;
-    position: fixed; /* 화면에 고정*/
-    top: 0; /* 맨 아래에 붙이기 */
-    left: 0;
-    width: 100%; /* 가로 꽉 차게 */
-    height: 60px;
-    background-color: #ffffff;
-    display: flex; /* 메뉴들을 가로로 나란히 배치 */
-    justify-content: space-between;
+    /* 1. 전체적인 비율은 vw로 잡기 */
+    height: 8vw;           /* 높이도 비율로! 단, 너무 크지 않게 7~10vw 추천 */
+    padding: 0 4vw;        /* 양옆 여백도 화면 비례 */
+    gap: 10vw;             /* 로고와 메뉴 사이 간격도 비례 */
+    
+    /* 2. 짤림 방지 필살기 */
+    box-sizing: border-box; /* 패딩이 너비 100%를 안 넘어가게 가둡니다 */
+    width: 100%;
+    white-space: nowrap;    /* 내부 글자들이 절대 줄바꿈 안 되게 함 */
+    
+    display: flex;
     align-items: center;
-    border-top: 1px solid #eeeeee; /* 위에 살짝 선을 그어 구분 */
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05); /* 은은한 그림자 */
-    z-index: 1000; /* 다른 내용물보다 항상 위에 보이게 */
-}
-.nav-button {
-    padding: 12px 24px;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
     background-color: white;
-    border: 1px solid #000;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 20px;
-    transition: 0.2s;
+    border-bottom: 0.2vw solid #eeeeee; /* 선 두께도 비율로! */
+    z-index: 1000;
 }
+
 .navbar-logo a {
-    font-size: 20px;
+    font-size: 2.5vw;       /* 글자 크기도 화면에 비례하게 */
     font-weight: 800;
-    color: #6c5ce7; /* 포인트 컬러 */
+    color: #6c5ce7;
     text-decoration: none;
-    letter-spacing: -0.5px; /* 글자 간격을 좁혀서 더 세련되게 */
 }
 
 .navbar-menus {
-    padding: 0 20px;
     display: flex;
-    gap: 30px; /* 메뉴 글자들 사이의 간격 */
+    gap: 2vw;              /* 버튼들 사이의 간격 */
+}
+
+.nav-button {
+    /* 버튼의 패딩과 폰트도 vw로 하면 완벽한 반응형! */
+    padding: 1vw 2vw;
+    font-size: 1.8vw;
+    min-width: 8vw;        /* 최소 너비도 화면에 비례 */
+    
+    background-color: white;
+    border: 0.1vw solid #6c5ce7;
+    border-radius: 1vw;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.nav-button:hover {
+    background-color: #f8f7ff;
+    color: #6c5ce7;
 }
 
 .nav-button:hover {
