@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 // Navbar.js 수정본
 const menus = [
     { id: "home", label: "홈", path: "/" },
-    { id: "music", label: "음악 탐색", path: "/Music" },
-    { id: "mood", label: "기분 기록", path: "/Mood" },
-    { id: "mypage", label: "마이 페이지", path: "/Mypage" },
-    { id: "about_us", label: "정보", path: "/About" },
+    { id: "music", label: "음악 탐색", path: "/music" },
+    { id: "mood", label: "기분 기록", path: "/mood" },
+    { id: "mypage", label: "마이 페이지", path: "/mypage" },
+    { id: "about_us", label: "정보", path: "/about" },
 ];
 
 function Navbar() {
@@ -18,7 +18,7 @@ function Navbar() {
             </div>
             <div className="navbar-menus">
                 {menus.map((item) => (
-                    /* path를 to라는 이름으로 NavItem에게 넘겨줍니다 */
+                // item.path(주소)를 'to'라는 이름의 배달통(Prop)에 담아서 보냅니다.
                     <NavItem key={item.id} label={item.label} to={item.path} />
                 ))}
             </div>

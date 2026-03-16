@@ -1,18 +1,22 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import React from 'react';
 import Navbar from './components/Navbar';
 import './styles/Navbar.css';
-import Home from './pages/Home.js';
+import Home from './pages/Home';
+import Music from './pages/Music';
+import Mood from './pages/Mood';
+
 import './styles/Home.css';
 
 function App() {
 
     return (
         <BrowserRouter>
-            <div className = "app-container">
-                <Navbar />
-                <Home/>
-            </div>
+            <Navbar/>
+            <Routes>
+                <Route path="/" element={<Home/>} />
+                <Route path="/music" element={<Music/>} />
+                <Route path="/mood" element={<Mood/>} />
+            </Routes>
         </BrowserRouter>
   );
 }
