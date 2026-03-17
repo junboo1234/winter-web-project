@@ -6,8 +6,8 @@ const menus = [
     { id: "home", label: "홈", path: "/" },
     { id: "music", label: "음악 탐색", path: "/music" },
     { id: "mood", label: "기분 기록", path: "/mood" },
-    { id: "mypage", label: "마이 페이지", path: "/mypage" },
-    { id: "about_us", label: "정보", path: "/about" },
+    { id: "mypage", label: "마이 페이지", path: "/my_page" },
+    { id: "about_us", label: "정보", path: "/about_us" },
 ];
 
 function Navbar() {

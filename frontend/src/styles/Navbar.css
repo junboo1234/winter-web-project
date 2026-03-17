@@ -1,20 +1,18 @@
 .navbar {
-    /* 1. 전체적인 비율은 vw로 잡기 */
     height: 8vw;           /* 높이도 비율로! 단, 너무 크지 않게 7~10vw 추천 */
-    padding: 0 4vw;        /* 양옆 여백도 화면 비례 */
-    gap: 10vw;             /* 로고와 메뉴 사이 간격도 비례 */
-    
-    /* 2. 짤림 방지 필살기 */
+    gap: 7vw;             /* 로고와 메뉴 사이 간격도 비례 */
+
     box-sizing: border-box; /* 패딩이 너비 100%를 안 넘어가게 가둡니다 */
     width: 100%;
     white-space: nowrap;    /* 내부 글자들이 절대 줄바꿈 안 되게 함 */
-    
+    justify-content: center;
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: fixed;
     top: 0;
     left: 0;
+    
+    position: relative;
+    padding-left: 5vw;
     background-color: white;
     border-bottom: 0.2vw solid #eeeeee; /* 선 두께도 비율로! */
     z-index: 1000;
@@ -23,8 +21,15 @@
 .navbar-logo a {
     font-size: 2.5vw;       /* 글자 크기도 화면에 비례하게 */
     font-weight: 800;
+    
     color: #6c5ce7;
     text-decoration: none;
+    /* 2. 로고만 따로 떼서 왼쪽 끝에 박제합니다 */
+    position: absolute;
+    left: 5vw; 
+    top: 50%;
+    transform: translateY(-50%);
+
 }
 
 .navbar-menus {
@@ -33,10 +38,10 @@
 }
 
 .nav-button {
+
     /* 버튼의 패딩과 폰트도 vw로 하면 완벽한 반응형! */
     padding: 1vw 2vw;
     font-size: 1.8vw;
-    min-width: 8vw;        /* 최소 너비도 화면에 비례 */
     
     background-color: white;
     border: 0.1vw solid #6c5ce7;
@@ -46,11 +51,8 @@
     text-align: center;
 }
 
-.nav-button:hover {
-    background-color: #f8f7ff;
-    color: #6c5ce7;
-}
 
 .nav-button:hover {
-  background-color: skyblue;
+    background-color: skyblue;
+    color: #6c5ce7;
 }
