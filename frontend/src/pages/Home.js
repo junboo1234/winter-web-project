@@ -8,24 +8,22 @@ const SLIDE_ITEMS = [
     { id: 4, title: "새로운 음악 탐색1", sub: "지금 당신의 감정에 어울리는 곡을 찾아보세요1.", color: "#000000" }
 ];
 
-
 function Home() { 
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const [isPaused, setIsPaused] = useState(false);
 
-
-
     useEffect(() => {
         if(isPaused == true){
+            console.log("is paused");
             return;
         }
         const timer = setTimeout(() => {
             setCurrentIndex((prev) => (prev + 1) % SLIDE_ITEMS.length);
-        }, 1000);
+        }, 3000);
         return () => clearTimeout(timer); 
-    }, [currentIndex, setIsPaused]);
+    }, [currentIndex, isPaused]);
 
     const nextSlide = () => {
         setCurrentIndex((prev) => (prev + 1) % SLIDE_ITEMS.length);
@@ -42,8 +40,14 @@ function Home() {
             <button 
                 className="arrow-button left" 
                 onClick={prevSlide} 
-                onMouseEnter={() => setIsPaused(true)} 
-                onMouseLeave={() => setIsPaused(false)}
+                onMouseEnter={() =>{ 
+                    console.log("mouse enter!");
+                    setIsPaused(true);
+                }} 
+                onMouseLeave={() =>{ 
+                    console.log("mouse leave!");
+                    setIsPaused(false);
+                }}
             >
                 <ChevronLeft size={32} color="white" strokeWidth={1.5} />
             </button>
@@ -52,12 +56,16 @@ function Home() {
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
                 {SLIDE_ITEMS.map((item) => (
-                    <div key={item.id} className="slide-item" style={{ backgroundColor: item.color }}>
+                    <div key={item.id} 
+                        className="slide-item" 
+                        style={{ backgroundColor: item.color }}
+                    >
                         <section className="start-section">
-                            <h1>{item.title}</h1>
-                            <p>{item.sub}</p>
+                            <div className="text-group">
+                                <h1>{item.title}</h1>
+                                <p>{item.sub}</p>
+                            </div>
                             <button className="start-button">지금 기록하기</button>
-                            
                         </section>
                     </div>
                 ))}
@@ -65,8 +73,14 @@ function Home() {
             <button 
                 className="arrow-button right" 
                 onClick={nextSlide} 
-                onMouseEnter={() => setIsPaused(true)} 
-                onMouseLeave={() => setIsPaused(false)}
+                onMouseEnter={() =>{ 
+                    console.log("mouse enter!");
+                    setIsPaused(true);
+                }} 
+                onMouseLeave={() =>{ 
+                    console.log("mouse leave!");
+                    setIsPaused(false);
+                }}
             >
                 <ChevronRight size={32} color="white" strokeWidth={1.5} />
             </button>
@@ -85,8 +99,6 @@ function Home() {
             </div>
         </div>
     );
-
-
 }
 
 export default Home;

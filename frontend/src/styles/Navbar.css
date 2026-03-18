@@ -1,5 +1,5 @@
 .navbar {
-    height: 8vw;           /* 높이도 비율로! 단, 너무 크지 않게 7~10vw 추천 */
+    height: 7vw;           /* 높이도 비율로! 단, 너무 크지 않게 7~10vw 추천 */
     gap: 7vw;             /* 로고와 메뉴 사이 간격도 비례 */
 
     box-sizing: border-box; /* 패딩이 너비 100%를 안 넘어가게 가둡니다 */
@@ -41,12 +41,12 @@
 
     /* 버튼의 패딩과 폰트도 vw로 하면 완벽한 반응형! */
     padding: 1vw 2vw;
-    font-size: 1.8vw;
+    font-size: 2vw 2vh;
     
     background-color: white;
     border: 0.1vw solid #6c5ce7;
     border-radius: 1vw;
-    cursor: pointer;
+
     transition: 0.2s;
     text-align: center;
 }

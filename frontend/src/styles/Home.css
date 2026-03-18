@@ -1,3 +1,4 @@
+
 .home-container {
 
     background-color: #f8f9fa; /* 편안한 연회색 배경 */
@@ -25,6 +26,43 @@
     color: white;
 }
 
+.start-section {
+    /* 1. 플렉스 모드 켜기 */
+    display: flex; 
+    
+    /* 2. 자식 요소들을 위에서 아래로(세로로) 쌓기 */
+    flex-direction: column; 
+    /* 3. 가로축 중앙 정렬 (h1, p, 버튼 모두 가운데로!) */
+    align-items: center; 
+    
+    /* 4. 세로축 중앙 정렬 (부모 높이가 있을 때 작동) */
+    justify-content: center; 
+    
+    /* 텍스트 자체도 가운데 정렬해주는 것이 안전합니다 */
+    text-align: center; 
+}
+
+.start-button {
+    /* 버튼 내부의 글자를 중앙에 맞추고 싶을 때 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 버튼이 너무 넓게 퍼지는 걸 막고 싶다면? */
+    /* width: fit-content; */ 
+}
+.text-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 1vh; /* 제목과 서브 사이의 아주 미세한 간격만 따로 설정 */
+    align-items: center;
+    margin-bottom: 2vh;
+}
+.text-group h1, 
+.text-group p {
+    margin: 0;
+}
 /* 아래쪽 점들(인디케이터) 스타일 */
 .slide-dots {
     position: absolute;
